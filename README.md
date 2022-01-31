@@ -2,7 +2,7 @@
 
 
 
-![version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
+![version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://monujohn.com#contact)
 
 ![Product Gif](./github-assets/black-dashboard-react.gif)
 
