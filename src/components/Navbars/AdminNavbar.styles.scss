@@ -1,0 +1,30 @@
+.navbar-logo img {
+    height: 45px;
+    margin-left: -15px;
+    margin-top: 10px;
+}
+
+.small-btn
+{
+    font-size: 12px !important;
+}
+
+// scss-docs-start spinner-border-keyframes
+@keyframes spinner-border {
+    to { transform: rotate(360deg) #{"/* rtl:ignore */"}; }
+  }
+// scss-docs-end spinner-border-keyframes
+
+.spinner-border {
+    display: inline-flex;
+    width: 15px;
+    height: 15px;
+    vertical-align: -0.125em;
+    border: 0.25em solid #fff;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: .55s linear infinite spinner-border;
+    animation: .75s linear infinite spinner-border;
+    margin-right: 5px;
+}
+  

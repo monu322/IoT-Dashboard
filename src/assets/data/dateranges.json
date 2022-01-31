@@ -1,0 +1,18 @@
+[
+  {
+    "daterange": "Dec 3-6 '18",
+    "url": "https://cdudata.s3.eu-west-2.amazonaws.com/CDU1/DL2018_85.csv"
+  },
+  {
+    "daterange": "Dec 7-10 '18",
+    "url": "https://cdudata.s3.eu-west-2.amazonaws.com/CDU1/DL2018_86.csv"
+  },
+  {
+    "daterange": "Dec 11-14 '18",
+    "url": "https://cdudata.s3.eu-west-2.amazonaws.com/CDU1/DL2018_87.csv"
+  },
+  {
+    "daterange": "Dec 15-18 '18",
+    "url": "https://cdudata.s3.eu-west-2.amazonaws.com/CDU1/DL2018_88.csv"
+  }
+]
