@@ -21,6 +21,12 @@ import classNames from "classnames";
 // react plugin used to create charts
 import { Line, Bar } from "react-chartjs-2";
 
+import { ReactComponent as PumpIcon } from '../assets/img/icons/pump.svg';
+import { ReactComponent as ValveIcon } from '../assets/img/icons/valve.svg';
+import { ReactComponent as PressureIcon } from '../assets/img/icons/pressure.svg';
+
+
+
 // reactstrap components
 import {
   Button,
@@ -39,12 +45,12 @@ import {
   Table,
   Row,
   Col,
-  UncontrolledTooltip,
+  UncontrolledTooltip
 } from "reactstrap";
 
 
 import { DataContext } from 'contexts/DataContext';
-
+import MinMaxBox from "widgets/minmaxbox/minmaxbox.component";
 
 // core components
 import {
@@ -53,6 +59,7 @@ import {
   chartExample3,
   chartExample4,
 } from "variables/charts.js";
+
 
 function Dashboard(props) {
   
@@ -93,46 +100,13 @@ function Dashboard(props) {
         
       <Row>
             <Col lg="3">
-              <Card className="card-chart">
-                <CardHeader>
-                  <h5 className="card-category">Pump Demands</h5>
-                  <CardTitle tag="h3">
-                    <i className="tim-icons icon-bell-55 text-info" /> {
-                      data?p1_speed_array[0]:null
-                    }
-                  </CardTitle>
-                </CardHeader>
-                <CardBody>
-                  
-                </CardBody>
-              </Card>
+              <MinMaxBox Icon={PumpIcon}/>
             </Col>
             <Col lg="3">
-              <Card className="card-chart">
-                <CardHeader>
-                  <h5 className="card-category">Valve Positions</h5>
-                  <CardTitle tag="h3">
-                    <i className="tim-icons icon-delivery-fast text-primary" />{" "}
-                    3,500€
-                  </CardTitle>
-                </CardHeader>
-                <CardBody>
-                  
-                </CardBody>
-              </Card>
+              <MinMaxBox Icon={ValveIcon}/>
             </Col>
             <Col lg="3">
-              <Card className="card-chart">
-                <CardHeader>
-                  <h5 className="card-category">Pump Pressure</h5>
-                  <CardTitle tag="h3">
-                    <i className="tim-icons icon-send text-success" /> 12,100K
-                  </CardTitle>
-                </CardHeader>
-                <CardBody>
-                  
-                </CardBody>
-              </Card>
+              <MinMaxBox Icon={PressureIcon}/>
             </Col>
 
             <Col lg="3">

@@ -48,6 +48,8 @@ function Admin(props) {
     document.documentElement.className.indexOf("nav-open") !== -1
   );
 
+  console.log('admin loaded');
+
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
@@ -123,12 +125,13 @@ function Admin(props) {
   
   React.useEffect(() => {
     setdataLoading(true);
-    console.log('loading started adminjs');
+    console.log('loading started adminjs mount');
 
-    Papa.parse(latest_daterange.url, {
+    const fetchData = async()=>{
+      Papa.parse(latest_daterange.url, {
         worker: true, // Don't bog down the main thread if its a big file,
         download: true,
-        complete: function(result, file) {
+        complete: await function(result, file) {
             console.log('parsing complete read admin', result);
 
             let data_arrays = transpose(result.data);
@@ -137,7 +140,11 @@ function Admin(props) {
 
             setdataLoading(false);
         }
-    });
+      });
+    }
+
+    fetchData();
+    
 
   }, []);
 
