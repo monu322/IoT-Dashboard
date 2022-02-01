@@ -24,6 +24,7 @@ import { Line, Bar } from "react-chartjs-2";
 import { ReactComponent as PumpIcon } from '../assets/img/icons/pump.svg';
 import { ReactComponent as ValveIcon } from '../assets/img/icons/valve.svg';
 import { ReactComponent as PressureIcon } from '../assets/img/icons/pressure.svg';
+import { ReactComponent as ThermoIcon } from '../assets/img/icons/thermometer.svg';
 
 
 
@@ -52,6 +53,8 @@ import {
 import { DataContext } from 'contexts/DataContext';
 import MinMaxBox from "widgets/minmaxbox/minmaxbox.component";
 
+import { maxMinAvg } from "csvUtils";
+
 // core components
 import {
   chartExample1,
@@ -65,23 +68,12 @@ function Dashboard(props) {
   
   const { data } = useContext(DataContext);
 
-  function maxMinAvg(arr) {
-    var max = arr[0];
-    var min = arr[0];
-    var sum = arr[0]; //changed from original post
-    for (var i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
-        if (arr[i] < min) {
-            min = arr[i];
-        }
-        sum = sum + arr[i];
-    }
-    return [max, min, Math.round(((sum/arr.length) + Number.EPSILON)*100)/100]; //changed from original post
-  }
+  let pumpMinMax = data?maxMinAvg(data[18].slice(1)):[];
+  let valvePosMinMax = data?maxMinAvg(data[21].slice(1)):[];
+  let pressureMinMax = data?maxMinAvg(data[24].slice(1)):[];
+  let tempMinMax = data?maxMinAvg(data[31].slice(1)):[];
 
-  
+  console.log('pressure array',data?data[24].slice(1):null)
 
   let p1_speed_array = data?data[18]:[];
 
@@ -100,27 +92,16 @@ function Dashboard(props) {
         
       <Row>
             <Col lg="3">
-              <MinMaxBox Icon={PumpIcon}/>
+              <MinMaxBox minMax={pumpMinMax} title="Pump Demand" Icon={PumpIcon}/>
             </Col>
             <Col lg="3">
-              <MinMaxBox Icon={ValveIcon}/>
+              <MinMaxBox minMax={valvePosMinMax} title="Valve Positions" Icon={ValveIcon}/>
             </Col>
             <Col lg="3">
-              <MinMaxBox Icon={PressureIcon}/>
+              <MinMaxBox minMax={pressureMinMax} title="Pressure" Icon={PressureIcon}/>
             </Col>
-
             <Col lg="3">
-              <Card className="card-chart">
-                <CardHeader>
-                  <h5 className="card-category">Notifications</h5>
-                  <CardTitle tag="h3">
-                    <i className="tim-icons icon-send text-success" /> 12,100K
-                  </CardTitle>
-                </CardHeader>
-                <CardBody>
-                  
-                </CardBody>
-              </Card>
+              <MinMaxBox minMax={tempMinMax} title="Temperature" Icon={ThermoIcon}/>
             </Col>
         </Row>
 

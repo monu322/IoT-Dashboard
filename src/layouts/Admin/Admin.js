@@ -134,7 +134,7 @@ function Admin(props) {
         complete: await function(result, file) {
             console.log('parsing complete read admin', result);
 
-            let data_arrays = transpose(result.data);
+            let data_arrays = transpose(result.data);            
 
             setData(data_arrays);
 

@@ -17,21 +17,21 @@ function MinMaxBox(props) {
                 <CardTitle className="mb-1" tag="h3">
                 <Row>
                 <Col xs="6">
-                    <h5 className="card-category">Valve Positions</h5>
+                    <h5 className="card-category">{props.title}</h5>
                     <props.Icon className="widget-icon"/>
                 </Col>
                 <Col xs="6">
                     <Row>
                     <Col xs="12">
-                        <span className="widget-label">Avg</span><span className="widget-value-avg">56</span>
+                        <span className="widget-label">Avg</span><span className="widget-value-avg">{props.minMax[2]}</span>
                     </Col>
                     </Row>
                     <Row>
                     <Col xs="6">
-                        <span className="widget-label">Min</span><span className="widget-value">54</span>
+                        <span className="widget-label">Min</span><span className="widget-value">{props.minMax[1]}</span>
                     </Col>
                     <Col xs="6">
-                        <span className="widget-label">Max</span><span className="widget-value">58</span>
+                        <span className="widget-label">Max</span><span className="widget-value">{props.minMax[0]}</span>
                     </Col>
                     </Row>
                 </Col>
