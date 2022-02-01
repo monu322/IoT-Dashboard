@@ -29,6 +29,8 @@ import Papa from 'papaparse';
 
 import { DataContext } from 'contexts/DataContext';
 
+import { transpose } from 'csvUtils';
+
 // reactstrap components
 import {
   Button,
@@ -94,9 +96,7 @@ function AdminNavbar(props) {
 
   
 
-  function transpose(matrix) {
-    return matrix[0].map((col, i) => matrix.map(row => row[i]));
-  }
+
 
   const daterange_click = (e)=>{
     e.preventDefault()
