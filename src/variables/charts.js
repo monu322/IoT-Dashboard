@@ -46,8 +46,8 @@ let chart1_2_options = {
           zeroLineColor: "transparent",
         },
         ticks: {
-          suggestedMin: 60,
-          suggestedMax: 125,
+          suggestedMin: 0,
+          suggestedMax: 15,
           padding: 20,
           fontColor: "#9a9a9a",
         },
@@ -233,7 +233,7 @@ let chartExample2 = {
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: "#1f8ef1",
-          borderWidth: 2,
+          borderWidth: 1,
           borderDash: [],
           borderDashOffset: 0.0,
           pointBackgroundColor: "#1f8ef1",
@@ -243,7 +243,7 @@ let chartExample2 = {
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,
           pointRadius: 4,
-          data: [80, 100, 70, 80, 120, 80],
+          data: [],
         },
       ],
     };
